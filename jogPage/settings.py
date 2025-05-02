@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'offers',
     'whitenoise.runserver_nostatic',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -50,7 +51,13 @@ ROOT_URLCONF = 'jogPage.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            # BASE_DIR / 'templates',
+            BASE_DIR/ 'base_templates',
+            BASE_DIR / 'accounts/templates',
+            BASE_DIR / 'offers/templates',
+
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,7 +87,7 @@ DATABASES = {
 #     'default': dj_database_url.config(conn_max_age=600, ssl_require=True),   
 # }
 
-
+AUTH_USER_MODEL = 'accounts.CustomUser' 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 

@@ -19,5 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('offers.urls')),
+    path('', include('offers.urls')),              # mantém como raiz, se desejar
+    path('accounts/', include('accounts.urls')),   # acessível via /accounts/
 ]
